@@ -139,6 +139,11 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+    "Game List": {
+        "on_update": "game_portal.game_portal.extract_game.extract_game_file"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
