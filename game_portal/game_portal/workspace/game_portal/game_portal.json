@@ -1,0 +1,104 @@
+{
+ "app": "game_portal",
+ "charts": [],
+ "content": "[{\"id\":\"_BLt0Xoboa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Configs</span>\",\"col\":12}},{\"id\":\"K7IbXNzYWl\",\"type\":\"card\",\"data\":{\"card_name\":\"Game Category\",\"col\":4}},{\"id\":\"viQbZVND-j\",\"type\":\"card\",\"data\":{\"card_name\":\"Game List\",\"col\":4}},{\"id\":\"S3fFW_LdHw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Stats</b></span>\",\"col\":12}},{\"id\":\"Xjf9foJ0eT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Game Categories\",\"col\":4}},{\"id\":\"u-9VGGA7kR\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Game List\",\"col\":4}},{\"id\":\"2fL3vBVCa6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"User List\",\"col\":4}}]",
+ "creation": "2025-10-06 12:25:55.840152",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "drag",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Game Portal",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Game Category",
+   "link_count": 0,
+   "link_to": "Game Catagory",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Game List",
+   "link_count": 0,
+   "link_to": "Game List",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Game Category",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Game Category",
+   "link_count": 0,
+   "link_to": "Game Catagory",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Game List",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Game List",
+   "link_count": 0,
+   "link_to": "Game List",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-10-06 15:07:59.587116",
+ "modified_by": "Administrator",
+ "module": "Game Portal",
+ "name": "Game Portal",
+ "number_cards": [
+  {
+   "label": "Game Categories",
+   "number_card_name": "Categories"
+  },
+  {
+   "label": "Game List",
+   "number_card_name": "Game List"
+  },
+  {
+   "label": "User List",
+   "number_card_name": "User List"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 36.0,
+ "shortcuts": [],
+ "title": "Game Portal",
+ "type": "Workspace"
+}

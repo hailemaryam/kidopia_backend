@@ -2,22 +2,6 @@ import frappe
 from frappe.utils.password import get_decrypted_password
 
 @frappe.whitelist(allow_guest=True)
-def login_with_phone_and_password(phone_number, password):
-    # Frappe automatically passes the request body parameters as function arguments
-    # No need to use frappe.form_dict    
-    user_email = phone_number + "@yourdomain.com"
-    
-    # Use the frappe.auth.authenticate function to validate the password
-    try:
-        frappe.auth.authenticate(user=user_email, pwd=password)
-        
-        # If authentication is successful, return a success message or user data
-        return {"message": "Login successful"}
-    except frappe.AuthenticationError:
-        frappe.throw("Invalid phone number or password", frappe.AuthenticationError)
-
-
-@frappe.whitelist(allow_guest=True)
 def create_user_from_webhook():
     # Retrieve the JSON data from the webhook request
     data = frappe.form_dict

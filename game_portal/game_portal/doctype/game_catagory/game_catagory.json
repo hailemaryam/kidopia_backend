@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{category_name}-{#####}",
  "creation": "2025-09-26 21:43:12.931600",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -28,10 +29,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-26 21:44:54.156822",
+ "modified": "2025-10-06 12:34:21.887774",
  "modified_by": "Administrator",
  "module": "Game Portal",
  "name": "Game Catagory",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
