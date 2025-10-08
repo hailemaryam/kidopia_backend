@@ -41,7 +41,8 @@ def create_user_from_webhook():
             "phone_number": phone_number,
             "subscription_type": subscription_type,
             "registration_date": datetime.now(),
-            "status": "Active"
+            "status": "Active",
+            "email": email
         })
         subscription.insert(ignore_permissions=True)
         frappe.db.commit()
