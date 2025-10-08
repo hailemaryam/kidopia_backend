@@ -8,7 +8,9 @@
  "field_order": [
   "section_break_tnvt",
   "category_name",
-  "priority"
+  "priority",
+  "icon",
+  "icon_color"
  ],
  "fields": [
   {
@@ -24,12 +26,22 @@
    "fieldname": "priority",
    "fieldtype": "Int",
    "label": "Priority"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "icon_color",
+   "fieldtype": "Data",
+   "label": "Icon Color"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-06 12:34:21.887774",
+ "modified": "2025-10-08 11:06:36.855759",
  "modified_by": "Administrator",
  "module": "Game Portal",
  "name": "Game Catagory",
