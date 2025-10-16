@@ -169,7 +169,7 @@ def sendOTP():
 
     try:
         # Make the HTTP request
-        response = requests.post(sms_url, headers=headers, data=json.dumps(sms_payload), timeout=10)
+        response = requests.post(sms_url,verify=False, headers=headers, data=json.dumps(sms_payload), timeout=10)
         raw_response = response.text.strip()
 
         # Log details for debugging
