@@ -189,7 +189,7 @@ def sendOTP():
         return {
             "message": "OTP sent successfully",
             "otp": otp_code,
-            "api_response": raw_response
+            "api_response": raw_response + "  phone:"+ phone_number
         }
 
     except requests.exceptions.RequestException as e:
