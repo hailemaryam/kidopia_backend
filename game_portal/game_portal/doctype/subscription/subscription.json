@@ -6,19 +6,17 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_3fwn",
   "phone_number",
   "registration_date",
   "status",
   "subscription_type",
-  "user",
-  "email"
+  "next_renewal_time",
+  "last_otp",
+  "otp_sent_time",
+  "deactivation_date",
+  "product_number"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_3fwn",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "phone_number",
    "fieldtype": "Data",
@@ -48,21 +46,35 @@
    "options": "Daily\nWeekly\nMonthly"
   },
   {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "label": "User",
-   "options": "User"
+   "fieldname": "next_renewal_time",
+   "fieldtype": "Datetime",
+   "label": "Next Renewal Time"
   },
   {
-   "fieldname": "email",
+   "fieldname": "deactivation_date",
+   "fieldtype": "Datetime",
+   "label": "Deactivation Date"
+  },
+  {
+   "fieldname": "last_otp",
    "fieldtype": "Data",
-   "label": "email"
+   "label": "Otp"
+  },
+  {
+   "fieldname": "otp_sent_time",
+   "fieldtype": "Datetime",
+   "label": "OTP sent time"
+  },
+  {
+   "fieldname": "product_number",
+   "fieldtype": "Data",
+   "label": "Product Number"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-08 14:38:58.931320",
+ "modified": "2025-10-15 17:52:33.676047",
  "modified_by": "Administrator",
  "module": "Game Portal",
  "name": "Subscription",
