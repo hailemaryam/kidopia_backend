@@ -144,32 +144,32 @@ def sendOTP():
 
     if not phone_number:
         frappe.throw("Missing phone_number")
-
     subscription = get_subscription_by_phone(phone_number)
     if not subscription:
         frappe.throw("Subscription not found")
-
+    if subscription.next_renewal_time < datetime.now():
+        frappe.throw("Subscriber has no enough balance.")
     # Generate and save OTP
     otp_code = generate_four_digit_code()
     subscription.last_otp = otp_code
     subscription.otp_sent_time = datetime.now()
     subscription.save(ignore_permissions=True)
     frappe.db.commit()
-
+    text = "Dear Customer " + str(otp_code) + " is your pin code"
     # --- API CALL to send OTP ---
     sms_url = "https://onevas.alet.io/api/partnerSms/send"
     sms_payload = {
         "phone_number": phone_number,
         "application_key": "MAM7A82XJZKSB1RK6VTNQJNIKITEUDU1",
-        "text": f"Your verification code is {otp_code}",
-        "product_number": subscription.product_number or "10000302767"
+        "text": text,
+        "product_number": subscription.product_number
     }
 
     headers = {"Content-Type": "application/json"}
 
     try:
         # Make the HTTP request
-        response = requests.post(sms_url,verify=False, headers=headers, data=json.dumps(sms_payload), timeout=10)
+        response = requests.post(sms_url,verify=False, headers=headers, json=sms_payload, timeout=10)
         raw_response = response.text.strip()
 
         # Log details for debugging
@@ -189,7 +189,7 @@ def sendOTP():
         return {
             "message": "OTP sent successfully",
             "otp": otp_code,
-            "api_response": raw_response + "  phone:"+ phone_number
+            "api_response": text
         }
 
     except requests.exceptions.RequestException as e:
