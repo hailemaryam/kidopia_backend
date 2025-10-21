@@ -137,7 +137,7 @@ def charging_notice():
 
     return {"message": "Charging record added successfully."}
 
-@frappe.whitelist(allow_guest=True, csrf=False)
+@frappe.whitelist(allow_guest=True)
 def sendOTP():
     data = frappe.form_dict or {}
     phone_number = data.get("phone_number")
