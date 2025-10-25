@@ -13,15 +13,13 @@ def extract_game_file(doc, method=None):
             folder_name = first_member.split('/')[0] if '/' in first_member else frappe.utils.cstr(doc.name)
 
             # Define the target directory using folder_name
-            target_dir = os.path.join(frappe.get_site_path('public', 'files', 'games'), folder_name)
+            target_dir = os.path.join(frappe.get_site_path('home', 'frappe', 'games'), folder_name)
 
-            # Ensure the target directory exists
             if not os.path.exists(target_dir):
                 os.makedirs(target_dir)
 
             # Extract all contents
-            zip_ref.extractall(os.path.join(frappe.get_site_path('public', 'files', 'games')))
+            zip_ref.extractall(os.path.join(frappe.get_site_path('home', 'frappe', 'games')))
 
-        # Update the 'location' field with the public URL (avoid recursion!)
-        doc.db_set("location", f"/files/games/{folder_name}/index.html")
+        doc.db_set("location", f"https://kidopia.memby.online/games/{folder_name}/index.html")
         
