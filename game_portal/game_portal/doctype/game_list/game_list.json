@@ -11,7 +11,8 @@
   "image",
   "location",
   "game_file_zip",
-  "game_category"
+  "game_category",
+  "game_point"
  ],
  "fields": [
   {
@@ -43,12 +44,18 @@
    "fieldtype": "Link",
    "label": "Game Category",
    "options": "Game Catagory"
+  },
+  {
+   "default": "0",
+   "fieldname": "game_point",
+   "fieldtype": "Int",
+   "label": "Game Point"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-06 13:13:34.370255",
+ "modified": "2025-12-14 14:37:28.802519",
  "modified_by": "Administrator",
  "module": "Game Portal",
  "name": "Game List",
