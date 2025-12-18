@@ -1,7 +1,7 @@
 {
  "app": "game_portal",
  "charts": [],
- "content": "[{\"id\":\"_BLt0Xoboa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Configs</span>\",\"col\":12}},{\"id\":\"K7IbXNzYWl\",\"type\":\"card\",\"data\":{\"card_name\":\"Game Category\",\"col\":4}},{\"id\":\"viQbZVND-j\",\"type\":\"card\",\"data\":{\"card_name\":\"Game List\",\"col\":4}},{\"id\":\"S3fFW_LdHw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Stats</b></span>\",\"col\":12}},{\"id\":\"Xjf9foJ0eT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Game Categories\",\"col\":4}},{\"id\":\"u-9VGGA7kR\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Game List\",\"col\":4}},{\"id\":\"2fL3vBVCa6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Subscriber List\",\"col\":4}}]",
+ "content": "[{\"id\":\"_BLt0Xoboa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Configs</span>\",\"col\":12}},{\"id\":\"K7IbXNzYWl\",\"type\":\"card\",\"data\":{\"card_name\":\"Game Category\",\"col\":4}},{\"id\":\"viQbZVND-j\",\"type\":\"card\",\"data\":{\"card_name\":\"Game List\",\"col\":4}},{\"id\":\"kYNwrkdoo6\",\"type\":\"card\",\"data\":{\"card_name\":\"Leaderboard Setting\",\"col\":4}},{\"id\":\"S3fFW_LdHw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Stats</b></span>\",\"col\":12}},{\"id\":\"Xjf9foJ0eT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Game Categories\",\"col\":4}},{\"id\":\"u-9VGGA7kR\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Game List\",\"col\":4}},{\"id\":\"2fL3vBVCa6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Subscriber List\",\"col\":4}}]",
  "creation": "2025-10-06 12:25:55.840152",
  "custom_blocks": [],
  "docstatus": 0,
@@ -72,9 +72,28 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leaderboard Setting",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "setting",
+   "link_count": 0,
+   "link_to": "Leader Board Setting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-10-08 12:51:30.431877",
+ "modified": "2025-12-18 15:27:52.584931",
  "modified_by": "Administrator",
  "module": "Game Portal",
  "name": "Game Portal",

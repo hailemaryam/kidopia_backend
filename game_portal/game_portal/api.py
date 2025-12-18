@@ -231,3 +231,22 @@ def checkBalance():
         return {"message": "You have enough balance."}
     else:
         frappe.throw("You don't have enough balance to play the game.")
+
+# add point to subscriber 
+@frappe.whitelist(allow_guest=True)
+def addPoint():
+    data = frappe.form_dict or {}
+    phone_number = data.get("phone_number")
+    point = data.get("point")
+
+    if not phone_number or not point:
+        frappe.throw("Missing phone_number or point")
+
+    subscription = get_subscription_by_phone(phone_number)
+    if not subscription:
+        frappe.throw("Subscription not found")
+
+    subscription.point += point
+    subscription.save(ignore_permissions=True)
+    frappe.db.commit()
+    return {"message": "Point added successfully."}
