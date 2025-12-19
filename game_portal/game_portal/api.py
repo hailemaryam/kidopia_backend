@@ -243,8 +243,6 @@ def addPoint():
     leaderboard_setting = frappe.get_doc("Leader Board Setting")
     if leaderboard_setting.status != "Open":
         return {"message": "Leaderboard is not open."}
-    if leaderboard_setting.end_date  and leaderboard_setting.end_date < datetime.now():
-        return {"message": "Leaderboard is ended."}
 
     if not phone_number or not point:
         frappe.throw("Missing phone_number or point")
