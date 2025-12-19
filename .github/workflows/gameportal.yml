@@ -24,6 +24,7 @@ jobs:
             cd /home/frappe/frappe-bench/apps/game_portal/
             git pull
             bench --site kidopia.memby.online migrate
+            bench --site gamestation.memby.online migrate
 
       - name: Build and Restart
         uses: appleboy/ssh-action@v0.1.4
