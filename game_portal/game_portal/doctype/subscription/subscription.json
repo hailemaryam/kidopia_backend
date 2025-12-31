@@ -15,7 +15,8 @@
   "otp_sent_time",
   "deactivation_date",
   "product_number",
-  "point"
+  "point",
+  "last_point_added"
  ],
  "fields": [
   {
@@ -76,12 +77,17 @@
    "fieldname": "point",
    "fieldtype": "Int",
    "label": "Point"
+  },
+  {
+   "fieldname": "last_point_added",
+   "fieldtype": "Datetime",
+   "label": "Last Point Added"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-14 15:56:49.205793",
+ "modified": "2026-01-01 01:54:10.130601",
  "modified_by": "Administrator",
  "module": "Game Portal",
  "name": "Subscription",

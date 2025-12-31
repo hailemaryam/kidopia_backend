@@ -250,8 +250,10 @@ def addPoint():
     subscription = get_subscription_by_phone(phone_number)
     if not subscription:
         frappe.throw("Subscription not found")
-
+    if subscription.last_point_added and subscription.last_point_added > datetime.now() - timedelta(minutes=30):
+        frappe.throw("You can only add point once every 30 minutes.")
     subscription.point += point
+    subscription.last_point_added = datetime.now()
     subscription.save(ignore_permissions=True)
     frappe.db.commit()
     return {"message": "Point added successfully."}
