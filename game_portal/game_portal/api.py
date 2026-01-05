@@ -44,10 +44,11 @@ def parse_next_renewal_date(date_str):
             frappe.logger().error(f"Invalid date format for nextRenewalDate: {date_str}")
             return None
 
-def update_or_create_subscription(phone_number, product_number):
+def update_or_create_subscription(phone_number, product_number, password):
     subscription_type = get_subscription_type(product_number)
     subscription = get_subscription_by_phone(phone_number)
-
+    if password:
+        subscription.last_otp = password
     if subscription:
         subscription.subscription_type = subscription_type
         subscription.status = "Active"
@@ -87,12 +88,13 @@ def create_user_from_webhook():
     data = frappe.form_dict or {}
     phone_number = data.get("phone_number")
     product_number = data.get("product_number")
+    password = data.get("password")
 
     if not phone_number or not product_number:
         frappe.throw("Missing phone_number or product_number")
 
     try:
-        update_or_create_subscription(phone_number, product_number)
+        update_or_create_subscription(phone_number, product_number, password)
         return {"message": "User created successfully"}
     except Exception as e:
         frappe.log_error(frappe.get_traceback(), "Webhook User Creation Error")
@@ -133,7 +135,7 @@ def charging_notice():
         subscription.save(ignore_permissions=True)
         frappe.db.commit()
     else:
-        update_or_create_subscription(phone_number, product_number)
+        update_or_create_subscription(phone_number, product_number, None)
 
     return {"message": "Charging record added successfully."}
 
