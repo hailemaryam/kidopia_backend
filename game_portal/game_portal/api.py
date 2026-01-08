@@ -211,6 +211,8 @@ def checkOTP():
     subscription = get_subscription_by_phone(phone_number)
     if not subscription:
         frappe.throw("Subscription not found")
+    if subscription.status != "Active":
+        frappe.throw("Subscription is not active.")
 
     if str(subscription.last_otp) == str(otp):
         return {"message": "Successful OTP"}
