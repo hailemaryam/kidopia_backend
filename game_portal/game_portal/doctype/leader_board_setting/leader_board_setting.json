@@ -10,7 +10,9 @@
   "banner",
   "end_date",
   "description",
-  "status"
+  "status",
+  "section_break_clear_points",
+  "clear_points_button"
  ],
  "fields": [
   {
@@ -42,6 +44,16 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Open\nClose\nEnding"
+  },
+  {
+   "fieldname": "section_break_clear_points",
+   "fieldtype": "Section Break",
+   "label": "Clear Points"
+  },
+  {
+   "fieldname": "clear_points_button",
+   "fieldtype": "Button",
+   "label": "Clear Point"
   }
  ],
  "grid_page_length": 50,
