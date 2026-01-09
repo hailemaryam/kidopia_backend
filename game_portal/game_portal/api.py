@@ -50,9 +50,9 @@ def parse_next_renewal_date(date_str):
 def update_or_create_subscription(phone_number, product_number, password):
     subscription_type = get_subscription_type(product_number)
     subscription = get_subscription_by_phone(phone_number)
-    if password:
-        subscription.last_otp = password
     if subscription:
+        if password:
+            subscription.last_otp = password
         subscription.subscription_type = subscription_type
         subscription.status = "Active"
         subscription.product_number = product_number
@@ -67,7 +67,8 @@ def update_or_create_subscription(phone_number, product_number, password):
             "registration_date": datetime.now(),
             "next_renewal_time": datetime.now() + timedelta(days=3),
             "status": "Active",
-            "product_number": product_number
+            "product_number": product_number,
+            "last_otp": password if password else None
         })
         subscription.insert(ignore_permissions=True)
         frappe.db.commit()
