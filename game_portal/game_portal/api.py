@@ -4,6 +4,9 @@ from datetime import datetime, timedelta
 import random
 import requests
 import json
+from urllib.parse import urlencode
+
+
 
 def generate_four_digit_code():
     return random.randint(1000, 9999)
@@ -158,47 +161,19 @@ def sendOTP():
     subscription.save(ignore_permissions=True)
     frappe.db.commit()
     text = "Dear Customer " + str(otp_code) + " is your pin code"
-    # --- API CALL to send OTP ---
-    sms_url = "https://onevas.alet.io/api/partnerSms/send"
-    sms_payload = {
-        "phone_number": phone_number,
-        "application_key": "MAM7A82XJZKSB1RK6VTNQJNIKITEUDU1",
-        "text": text,
-        "product_number": subscription.product_number
-    }
 
-    headers = {"Content-Type": "application/json"}
-
+    #--- API CALL to send OTP ---
     try:
-        # Make the HTTP request
-        response = requests.post(sms_url,verify=False, headers=headers, json=sms_payload, timeout=10)
-        raw_response = response.text.strip()
-
-        # Log details for debugging
-        frappe.logger().info({
-            "event": "sendOTP",
-            "phone_number": phone_number,
-            "status_code": response.status_code,
-            "response_text": raw_response
-        })
-
-        # Check for HTTP errors
-        if response.status_code != 200:
-            frappe.log_error(f"SMS API returned {response.status_code}: {raw_response}", "OTP Send Error")
-            return {"error": f"Failed to send OTP: {raw_response}"}
-
-        # Success message
+        frappe.core.doctype.sms_settings.sms_settings.send_sms(receiver_list=[phone_number], msg=text)
         return {
             "message": "OTP sent successfully",
             "otp": otp_code,
             "api_response": text
         }
-
     except requests.exceptions.RequestException as e:
         frappe.log_error(f"Failed to send OTP request: {str(e)}", "OTP Send Exception")
         frappe.throw(f"Failed to send OTP due to network error: {e}")
-
-
+        
 @frappe.whitelist(allow_guest=True)
 def checkOTP():
     data = frappe.form_dict or {}
