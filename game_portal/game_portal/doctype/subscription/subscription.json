@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:phone_number",
  "creation": "2025-10-08 12:41:35.881392",
@@ -87,7 +88,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-01 01:54:10.130601",
+ "modified": "2026-01-12 16:56:59.721439",
  "modified_by": "Administrator",
  "module": "Game Portal",
  "name": "Subscription",
@@ -99,6 +100,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
