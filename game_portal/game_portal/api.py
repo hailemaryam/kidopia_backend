@@ -122,8 +122,11 @@ def charging_notice():
     if not phone_number or not product_number:
         frappe.throw("Missing phone_number or product_number")
 
-    # Convert nextRenewalDate string to datetime
-    next_renewal_date = parse_next_renewal_date(next_renewal_date_str)
+    if next_renewal_date_str:
+        # Convert nextRenewalDate string to datetime
+        next_renewal_date = parse_next_renewal_date(next_renewal_date_str)
+    else:
+        next_renewal_date = datetime.now() + timedelta(days=1)
 
     subscription = get_subscription_by_phone(phone_number)
     if subscription:
