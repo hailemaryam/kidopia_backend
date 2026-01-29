@@ -171,7 +171,7 @@ def sendOTP():
         frappe.core.doctype.sms_settings.sms_settings.send_sms(receiver_list=[phone_number], msg=text)
         return {
             "message": "OTP sent successfully",
-            "otp": otp_code,
+            # "otp": otp_code,
             "api_response": text
         }
     except requests.exceptions.RequestException as e:
