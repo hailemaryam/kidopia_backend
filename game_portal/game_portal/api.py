@@ -172,7 +172,7 @@ def sendOTP():
         return {
             "message": "OTP sent successfully",
             # "otp": otp_code,
-            "api_response": text
+            #"api_response": text
         }
     except requests.exceptions.RequestException as e:
         frappe.log_error(f"Failed to send OTP request: {str(e)}", "OTP Send Exception")
