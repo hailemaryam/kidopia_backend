@@ -193,7 +193,8 @@ def checkOTP():
         frappe.throw("Subscription not found")
     if subscription.status != "Active":
         frappe.throw("Subscription is not active.")
-
+    if subscription.next_renewal_time and subscription.next_renewal_time < datetime.now():
+        frappe.throw("Subscriber has no enough balance.")
     if str(subscription.last_otp) == str(otp):
         return {"message": "Successful OTP"}
     else:
